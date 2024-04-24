@@ -4,9 +4,12 @@
     "deploy": "vercel"
   },
   "dependencies": {
-    "hono": "^4.2.7"
+    "fs": "^0.0.1-security",
+    "hono": "^4.2.7",
+    "qrcode": "^1.5.3"
   },
   "devDependencies": {
+    "@types/qrcode": "^1.5.5",
     "vercel": "^32.4.1"
   }
 }
