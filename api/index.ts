@@ -2,14 +2,18 @@ import { Hono } from 'hono'
 import { handle } from 'hono/vercel'
 import QRCodeGenerator from '../utils/qrcode';
 
+// Vercel
 export const config = {
   runtime: 'edge'
 }
 
+// Hono
 const app = new Hono().basePath('/api')
 
+// QR code generator
 const generator = new QRCodeGenerator();
 
+// Root
 app.get('/', (c) => {
   return c.json({ message: "Hello Hono!" });
 })
