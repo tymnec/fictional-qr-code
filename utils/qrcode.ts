@@ -1,5 +1,6 @@
 import * as qr from "qrcode";
 
+// QR code generator class
 class QRCodeGenerator {
   async generateQRCode(text: string) {
     try {
