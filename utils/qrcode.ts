@@ -12,6 +12,17 @@ class QRCodeGenerator {
       throw err;
     }
   }
+
+  async generateQRCodeSVG(text: string, options?: qr.QRCodeToBufferOptions) {
+    try {
+      // Generate QR code SVG with optional options
+      const qrData = await qr.toBuffer(text, options);
+      return qrData;
+    } catch (err) {
+      console.error("Error generating QR code:", err);
+      throw err;
+    }
+  }
 }
 
 export default QRCodeGenerator;
