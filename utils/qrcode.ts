@@ -1,4 +1,5 @@
 import * as qr from "qrcode";
+import * as fs from "fs";
 
 // QR code generator class with options
 class QRCodeGenerator {
@@ -17,6 +18,7 @@ class QRCodeGenerator {
     try {
       // Generate QR code SVG with optional options
       const qrData = await qr.toBuffer(text, options);
+      console.log(qrData);
       return qrData;
     } catch (err) {
       console.error("Error generating QR code:", err);

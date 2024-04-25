@@ -29,4 +29,15 @@ app.get('/generate', async (c) => {
   }
 })
 
+// Generate and View SVG QR Code
+app.get('/view', async (c) => {
+  const { text } = c.req.query();
+  try {
+    const response = await generator.generateQRCodeSVG(text);
+    return c.body(response);
+  } catch (err) {
+    return c.json({ error: "Failed to generate QR code." });
+  }
+})
+
 export default handle(app)
